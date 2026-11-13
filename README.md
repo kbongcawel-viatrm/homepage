@@ -31,3 +31,25 @@ npm run preview
 
 - LinkedIn: https://www.linkedin.com/in/kimagustin22/
 - GitHub: https://github.com/kbongcawel-viatrm
+
+
+## Cloudflare Workers Static Assets deployment
+
+The production hostname is configured as `bio.home-security.uk`.
+
+- Worker: `kevin-bongcawel-portfolio`
+- Build command: `npm run build`
+- Static asset directory: `dist/`
+- Wrangler configuration: `wrangler.jsonc`
+- Deployment workflow: `.github/workflows/deploy-cloudflare.yml`
+
+### Required GitHub Actions secret
+
+Add a Cloudflare API token to this repository:
+
+1. Open **Settings → Secrets and variables → Actions**.
+2. Create a repository secret named `CLOUDFLARE_API_TOKEN`.
+3. Grant the token permission to edit Workers Scripts and manage Workers custom domains for the `home-security.uk` zone/account.
+4. Run **Actions → Build and deploy portfolio to Cloudflare Workers → Run workflow**.
+
+The workflow builds the Vite site and deploys the Worker plus `dist/` assets. Wrangler provisions the configured custom domain and TLS certificate.
