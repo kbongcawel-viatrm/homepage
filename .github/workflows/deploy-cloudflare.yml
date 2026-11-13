@@ -1,5 +1,7 @@
 name: Build and deploy portfolio to Cloudflare Workers
 
+# Production deployment is gated by the repository CLOUDFLARE_API_TOKEN secret.
+
 on:
   push:
     branches:
