@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/homepage.png" alt="Suricata" width="420" />
+
 <table>
 <tr>
 <td align="center" width="64" height="64" style="background:#6c63ff;border-radius:12px;">
