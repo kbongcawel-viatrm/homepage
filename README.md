@@ -1,14 +1,6 @@
 <div align="center">
 
-<img src="assets/homepage.png" alt="Suricata" width="420" />
 
-<table>
-<tr>
-<td align="center" width="64" height="64" style="background:#6c63ff;border-radius:12px;">
-<span style="color:#ffffff;font-size:26px;font-weight:800;font-family:Manrope,Segoe UI,sans-serif;">K<span style="color:#d9d6ff;">.</span></span>
-</td>
-</tr>
-</table>
 
 # Kevin Bongcawel<span style="color:#ffb36b;">.</span>
 
@@ -20,6 +12,7 @@ deliver reliable technology with confidence.
 `CLOUD · DEVOPS · PLATFORM ENGINEERING`
 
 <br/>
+<img src="assets/homepage.png" alt="homepage" width="1020" />
 
 [![Live Portfolio](https://img.shields.io/badge/LIVE_PORTFOLIO-bio.home--security.uk-6c63ff?style=flat-square&labelColor=5148e5)](https://bio.home-security.uk/#portfolio)
 [![Vite](https://img.shields.io/badge/Vite-6-6c63ff?style=flat-square&labelColor=5148e5)](https://vite.dev/)
