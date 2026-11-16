@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/homepage.png" alt="Suricata" width="420" />
+<img src="assets/homepage.png" alt="Suricata" width="420" />
 
 <table>
 <tr>
