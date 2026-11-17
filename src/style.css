@@ -4,3 +4,10 @@
 
 /* Brand name and contact portrait refinements */
 .navbar-brand>span:last-child{font-size:13px;letter-spacing:.105em}.site-footer .navbar-brand>span:last-child{font-size:12px}.contact-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr)}.contact-copy{max-width:100%;width:100%}.contact-copy>h2{max-width:570px}.contact-card-top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:8px}.contact-portrait{display:block;flex:0 0 auto;width:76px;height:76px;object-fit:cover;object-position:center 28%;border:3px solid #ffffff20;border-radius:50%;box-shadow:0 8px 24px #0003}.contact-card h3{margin-top:16px}@media(max-width:767.98px){.navbar-brand>span:last-child{font-size:11px;letter-spacing:.08em}.contact-layout{grid-template-columns:1fr}.contact-copy>h2{font-size:clamp(2.8rem,10vw,4rem)}.contact-portrait{width:70px;height:70px}}@media(max-width:380px){.navbar-brand{gap:8px}.navbar-brand>span:last-child{font-size:10px;letter-spacing:.055em}}
+
+/* Prominent hero social links */
+.hero-socials{display:flex;align-items:center;gap:16px}
+.hero-social-link{display:grid;place-items:center;width:48px;height:48px;border:1px solid #dcd9ff;border-radius:12px;background:#fff;color:var(--purple);font-size:24px;box-shadow:0 7px 20px #5148e510;transition:transform .2s,background .2s,color .2s,box-shadow .2s}
+.hero-social-link:hover{transform:translateY(-3px);background:var(--purple);color:#fff;box-shadow:0 10px 24px #5148e52b}
+.hero-social-link:focus-visible{outline:3px solid #aaa4ff;outline-offset:3px}
+@media(max-width:420px){.hero-social-link{width:46px;height:46px;font-size:23px}}
