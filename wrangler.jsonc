@@ -22,5 +22,15 @@
       "enabled": true,
       "invocation_logs": true
     }
-  }
+  },
+  "ratelimits": [
+    {
+      "name": "ratelimit",
+      "namespace_id": "22",
+      "simple": {
+        "limit": 10,
+        "period": 10
+      }
+    }
+  ]
 }
