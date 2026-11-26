@@ -11,13 +11,13 @@ async function readBody(request) {
 }
 
 async function agenticHits(request, env) {
-  if (!env.MEEPOO?.check) return [];
+  if (!env.INVOKER?.check) return [];
   const url = new URL(request.url);
   const headers = {};
   request.headers.forEach((v, k) => {
     headers[k] = v;
   });
-  return await env.MEEPOO.check({
+  return await env.INVOKER.check({
     method: request.method,
     path: url.pathname,
     query: url.search.replace(/^\?/, ""),

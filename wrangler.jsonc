@@ -34,7 +34,7 @@
     }
   ],
   "services": [
-    { "binding": "MEEPOO", "service": "meepo" }
+    { "binding": "INVOKER", "service": "invoker" }
   ],
   "routes": [
   { "pattern": "bio.home-security.uk", "custom_domain": true }
