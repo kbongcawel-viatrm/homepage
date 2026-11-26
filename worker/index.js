@@ -11,13 +11,12 @@ async function readBody(request) {
 }
 
 async function agenticHits(request, env) {
-  if (!env.INVOKER?.check) return [];
   const url = new URL(request.url);
   const headers = {};
   request.headers.forEach((v, k) => {
     headers[k] = v;
   });
-  return await env.INVOKER.check({
+  const payload = {
     method: request.method,
     path: url.pathname,
     query: url.search.replace(/^\?/, ""),
@@ -26,6 +25,18 @@ async function agenticHits(request, env) {
     body: await readBody(request),
     ip: request.headers.get("cf-connecting-ip") ?? "unknown",
     port: Number(url.port) || (url.protocol === "https:" ? 443 : 80),
+  };
+  const results = await Promise.allSettled(
+    [env.INVOKER, env.MEEPO]
+      .filter((b) => b?.check)
+      .map((b) => b.check(payload))
+  );
+  return results.flatMap((r, i) => {
+    if (r.status === "rejected") {
+      console.log("agentic check failed", i, r.reason);
+      return [];
+    }
+    return r.value ?? [];
   });
 }
 
