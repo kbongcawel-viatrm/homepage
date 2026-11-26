@@ -33,6 +33,9 @@
       }
     }
   ],
+  "services": [
+    { "binding": "MEEPOO", "service": "meepo" }
+  ],
   "routes": [
   { "pattern": "bio.home-security.uk", "custom_domain": true }
 ]
