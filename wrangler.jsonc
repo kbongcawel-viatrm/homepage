@@ -3,34 +3,38 @@
   "name": "kevin-bongcawel-portfolio",
   "main": "worker/index.js",
   "compatibility_date": "2026-11-12",
-  "workers_dev": true,
-  "preview_urls": false,
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS",
-    "not_found_handling": "single-page-application",
-    "run_worker_first": false
-  },
-  "routes": [
-    {
-      "pattern": "bio.home-security.uk",
-      "custom_domain": true
-    }
-  ],
+  "upload_source_maps": true,
+
   "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
     "logs": {
       "enabled": true,
+      "head_sampling_rate": 1,
       "invocation_logs": true
     }
   },
+
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // REQUIRED: without this, matching assets are served directly
+    // and your Worker (and the rate limiter) never runs.
+    "run_worker_first": true
+  },
+
   "ratelimits": [
     {
-      "name": "ratelimit",
-      "namespace_id": "22",
+      "name": "ratelimit",          // binding name → env.ratelimit
+      "namespace_id": "22",         // keep your existing namespace
       "simple": {
-        "limit": 10,
-        "period": 10
+        "limit": 100,               // requests per period, per Cloudflare location
+        "period": 10                // must be 10 or 60
       }
     }
-  ]
+  ],
+  "routes": [
+  { "pattern": "bio.home-security.uk", "custom_domain": true }
+]
 }
+
